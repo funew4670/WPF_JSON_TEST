@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dgx="urn:tom-englert.de/DataGridExtensions"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1024">
+    <Border Padding="10">
+        <StackPanel Orientation="Horizontal">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="TextBox1" Grid.Column="0" Margin="10 10 10 10" HorizontalAlignment="Left" Width="300" Height="20"></TextBox>
+                <Button x:Name="Button1" Grid.Column="0" Height="20" Width="60" Content="browse" Margin="350 0 0 0" HorizontalAlignment="left" Click="Button1_Click"  />
+                <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="148"  Width="800" Margin="10 10 10 10" ItemsSource="{Binding}" dgx:DataGridFilter.IsAutoFilterEnabled="True"   Grid.Row="1" Grid.ColumnSpan="2" CellEditEnding="dataGrid1_CellEditEnding" BeginningEdit="dataGrid1_BeginningEdit" DataContextChanged="dataGrid1_DataContextChanged" CurrentCellChanged="dataGrid1_CurrentCellChanged"/>
+                <Button x:Name="buttonSave" Content="save" HorizontalAlignment="Left"  Margin="50,240,0,-190" Grid.Row="1" VerticalAlignment="Top"  Height="20" Width="60" Click="buttonSave_Click_1"  />
+
+            </Grid>
+
+        </StackPanel>
+    </Border>
+
+
+</Window>
+    
+    
